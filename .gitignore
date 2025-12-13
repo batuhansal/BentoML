@@ -1,0 +1,24 @@
+# --- Critical: Ignore your specific virtual environment ---
+bentoml-venv/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# BentoML & Docker generated files
+bentoml/
+build/
+dist/
+*.egg-info/
+
+# IDE settings
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

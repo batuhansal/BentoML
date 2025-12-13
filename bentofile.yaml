@@ -1,0 +1,14 @@
+service: "service:AdsService"  
+include:
+  - "*.py"
+  - "*.csv"  
+python:
+  packages:
+    - scikit-learn
+    - pandas
+    - numpy
+    - onnxruntime
+
+models:
+  - "social_ads_onnx:latest"
+
