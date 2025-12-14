@@ -86,6 +86,7 @@ locally to validate that the model and API work correctly.
 
 ```bash
 bentoml serve service.py --reload
+```
 
 ### Phase 2: Build & Run Backend (Docker)
 
