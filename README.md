@@ -66,6 +66,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### 🔍 Optional: Test the Service Locally (Without Docker)
+
+Before building the Bento and containerizing the service, you can run the backend
+locally to validate that the model and API work correctly.
+
+```bash
+bentoml serve service.py --reload
+
+
 #### 2️⃣ Train the Model
 
 Run the training script to train the classifier and convert it to ONNX. This saves the model to your local BentoML store:
