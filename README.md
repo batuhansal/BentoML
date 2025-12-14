@@ -106,5 +106,57 @@ bentoml containerize onnx_ads_service:TAG
 Start the inference server inside an isolated Linux container:
 
 ```bash
-#
+# -p 3000:3000 maps the container's port to your machine
+# --rm automatically deletes the container when you stop it
+docker run --rm -p 3000:3000 onnx_ads_service:TAG
 ```
+
+✅ **Verify:** Open [http://localhost:3000](http://localhost:3000) to see the Swagger UI. The backend is now live!
+
+---
+
+### Phase 3: Run the Frontend (Streamlit)
+
+Leave the Docker terminal open. Open a new terminal window to run the user interface.
+
+#### 1️⃣ Activate Environment
+
+Ensure you are inside your virtual environment:
+
+```bash
+# Windows:
+venv\Scripts\activate
+```
+
+#### 2️⃣ Launch the Streamlit App
+
+```bash
+streamlit run frontend.py
+```
+
+🌐 **Access:** The app will open automatically in your browser (usually at [http://localhost:8501](http://localhost:8501)).
+
+---
+
+## 🧪 Usage
+
+1. **Input Data:** Select Gender, Age, and Salary in the web interface
+2. **Predict:** Click the **Predict Purchase** button
+3. **Result:** The frontend sends a request to the Docker container (`http://localhost:3000/predict`) and displays whether the user is likely to purchase
+
+---
+
+## 💡 Key MLOps Concepts Demonstrated
+
+* **Reproducibility**
+  Using `bentoml containerize`, the model ships with its own OS and libraries, eliminating the *“it works on my machine”* problem.
+
+* **Model Portability**
+  The Docker image is cloud-agnostic and can be deployed to **AWS, Kubernetes, or Azure** without changing any code.
+
+* **Interoperability**
+  ONNX Runtime enables high-performance inference, fully decoupled from the original training framework.
+
+---
+
+🔥 *This project is a clean, real-world example of how ML models should be trained, packaged, and served in production.*
