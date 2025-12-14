@@ -66,14 +66,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 🔍 Optional: Test the Service Locally (Without Docker)
-
-Before building the Bento and containerizing the service, you can run the backend
-locally to validate that the model and API work correctly.
-
-```bash
-bentoml serve service.py --reload
-
 
 #### 2️⃣ Train the Model
 
@@ -86,6 +78,14 @@ python train.py
 **Output:** You should see a message confirming the model `social_ads_onnx:latest` has been saved.
 
 ---
+
+### 🔍 Optional: Test the Service Locally (Without Docker)
+
+Before building the Bento and containerizing the service, you can run the backend
+locally to validate that the model and API work correctly.
+
+```bash
+bentoml serve service.py --reload
 
 ### Phase 2: Build & Run Backend (Docker)
 
