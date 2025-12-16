@@ -88,6 +88,23 @@ locally to validate that the model and API work correctly.
 bentoml serve service.py --reload
 ```
 
+## 🔌 Test the `/predict` API (Manual JSON Request)
+
+Once the backend is running on `http://localhost:3000`, you can manually test the
+prediction endpoint by sending the following JSON payload.
+
+### 📤 Request Body (Copy & Paste)
+
+```json
+{
+  "input_data": {
+    "Gender": "Male",
+    "Age": 30,
+    "Salary": 87000
+  }
+}
+```
+
 ### Phase 2: Build & Run Backend (Docker)
 
 In this phase, we package the model into a **Bento** and run it as a Docker container.
